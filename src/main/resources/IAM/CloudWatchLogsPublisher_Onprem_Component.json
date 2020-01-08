@@ -1,0 +1,25 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CloudWatchLogGroupQueryAccess",
+            "Effect": "Allow",
+            "Action": [
+                "logs:DescribeLogGroups"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Sid": "CloudWatchLogsAccess",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:PutRetentionPolicy",
+                "logs:DescribeLogStreams",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:log-group:/myapp/onprem/*:log-stream:*"
+        }
+    ]
+}
